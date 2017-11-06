@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-3.2.1.js"></script>
+  <title>Exercice 2</title>
+</head>
+<body>
+  <form method="post">
+    <input type="text" name="note1" id="rate_1">
+    <input type="text" name="note2" id="rate_2">
+    <input type="text" name="note3" id="rate_3">
+    <input type="text" name="note4" id="rate_4">
+    <input type="text" name="note5" id="rate_5">
+    <button type="button" name="button" id="average_button">Moyenne</button>
+  </form>
+  <p id="result"></p>
+  <p id="evaluation"></p>
+</div>
+<script>
+$('#average_button').click(function(){
+  var rate_1 = $('#rate_1').val();
+  var rate_2 = $('#rate_2').val();
+  var rate_3 = $('#rate_3').val();
+  var rate_4 = $('#rate_4').val();
+  var rate_5 = $('#rate_5').val();
+  var average = (parseInt(rate_1) + parseInt(rate_2) + parseInt(rate_3) + parseInt(rate_4) + parseInt(rate_5)) /5;
+  $('#result').text('Votre moyenne est de ' + average);
+  if (average < 10) {
+    $('#evaluation').text('En dessous de la moyenne');
+  } else if (average >= 10 && average <= 13) {
+    $('#evaluation').text('Moyen');
+  } else if (average >= 13 && average <= 16) {
+    $('#evaluation').text('Bien');
+  } else if (average >= 16 && average <= 20) {
+    $('#evaluation').text('Trés bien');
+  } else if (average == 20) {
+    $('#evaluation').text('Excellent');
+  }
+});
+</script>
+</body>
+</html>
